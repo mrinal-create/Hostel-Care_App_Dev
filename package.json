@@ -1,0 +1,50 @@
+{
+  "name": "hostelcare-electron",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app/app.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 127.0.0.1\" \"wait-on http://127.0.0.1:5173 && electron .\"",
+    "build": "vite build",
+    "start": "electron .",
+    "dist:dmg": "vite build && electron-builder --mac dmg --arm64"
+  },
+  "build": {
+    "appId": "com.hostelcare.app",
+    "productName": "HostelCare",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "app/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.education"
+    }
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^33.4.11",
+    "electron-builder": "^26.15.3",
+    "wait-on": "^8.0.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.65.0"
+  }
+}

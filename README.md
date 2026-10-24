@@ -4,7 +4,17 @@ A fast, modern React + Vite + Electron desktop application designed for student 
 
 ---
 
-## Quick Start 
+## 📥 Direct Download (macOS)
+
+Pre-built application installer is available for direct download without needing Node.js or development tools:
+
+* 🍏 **[Download HostelCare v1.0.0 for macOS (Apple Silicon DMG)](https://drive.google.com/file/d/18L3rLVxUQ1guRm26_y39lnFz9TZvzIka/view?usp=sharing)** *(Hosted on Google Drive)*
+
+> **macOS Security Note:** Because the application is packaged for demo/testing without an Apple Developer certificate, macOS Gatekeeper may show an *unidentified developer* notice. To open it: Right-click (or Control-click) `HostelCare.app` in `/Applications`, choose **Open**, and confirm **Open**. You can also approve it in **System Settings → Privacy & Security**.
+
+---
+
+## Quick Start (Run from Source)
 
 ### 1. Install Dependencies
 ```bash
@@ -31,6 +41,11 @@ To compile the production React bundle and launch Electron directly against `dis
 ```bash
 npm run build
 npm start
+```
+
+To build a fresh macOS `.dmg` installer package locally:
+```bash
+npm run dist:dmg
 ```
 
 ---
